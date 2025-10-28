@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Продажа домов — HouseMart</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-white shadow fixed w-full z-10 top-0">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="text-2xl font-bold text-indigo-600">🏠 HouseMart</div>
+        <button id="menuToggle" class="md:hidden text-indigo-600 focus:outline-none">
+          ☰
+        </button>
+        <nav id="navMenu" class="hidden md:flex space-x-4 text-sm">
+          <a class="nav-link" href="#">Главная</a>
+          <a class="nav-link" href="#listings">Объекты</a>
+          <a class="nav-link" href="#contact">Контакты</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileNav" class="hidden bg-white shadow md:hidden">
+    <nav class="flex flex-col items-center py-2 space-y-2">
+      <a class="nav-link" href="#">Главная</a>
+      <a class="nav-link" href="#listings">Объекты</a>
+      <a class="nav-link" href="#contact">Контакты</a>
+    </nav>
+  </div>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-10">
+    <!-- Hero -->
+    <section class="bg-indigo-600 text-white rounded-lg p-6 sm:p-10 mb-8 text-center sm:text-left">
+      <h1 class="text-3xl sm:text-4xl font-extrabold mb-2">Найдите дом своей мечты</h1>
+      <p class="text-indigo-100 text-sm sm:text-base mb-4">
+        Фильтруйте по цене, комнатам и локации. Полностью адаптивный сайт!
+      </p>
+      <button id="openAddSample" class="bg-white text-indigo-600 px-5 py-2 rounded shadow hover:bg-indigo-50">
+        ➕ Добавить объект (demo)
+      </button>
+    </section>
+
+    <!-- Filters -->
+    <section class="mb-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
+        <input id="search" type="text" placeholder="Поиск: город или адрес" class="col-span-1 lg:col-span-2 p-2 border rounded w-full" />
+        <select id="beds" class="p-2 border rounded w-full">
+          <option value="any">Любые комнаты</option>
+          <option value="1">1+</option>
+          <option value="2">2+</option>
+          <option value="3">3+</option>
+          <option value="4">4+</option>
+        </select>
+        <select id="sort" class="p-2 border rounded w-full">
+          <option value="newest">Сначала новые</option>
+          <option value="price-asc">Цена ↑</option>
+          <option value="price-desc">Цена ↓</option>
+        </select>
+      </div>
+    </section>
+
+    <!-- Listings -->
+    <section id="listings">
+      <div id="listContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+      <div id="empty" class="hidden text-center text-gray-500 mt-6">Объектов не найдено.</div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-12 bg-white rounded-lg p-6 shadow">
+      <h2 class="text-xl sm:text-2xl font-semibold mb-4 text-center sm:text-left">Связаться с нами</h2>
+      <form id="contactForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <input required name="name" placeholder="Ваше имя" class="p-2 border rounded w-full" />
+        <input required name="email" type="email" placeholder="Email" class="p-2 border rounded w-full" />
+        <input name="phone" placeholder="Телефон" class="p-2 border rounded w-full md:col-span-2" />
+        <textarea name="message" placeholder="Сообщение" class="p-2 border rounded md:col-span-2 h-24"></textarea>
+        <button type="submit" class="bg-indigo-600 text-white px-4 py-2 rounded md:col-span-2 hover:bg-indigo-700">
+          Отправить
+        </button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center p-4 z-20">
+    <div class="bg-white rounded-lg max-w-2xl w-full shadow-lg animate-fadeIn">
+      <div class="p-4 relative">
+        <button id="closeModal" class="absolute top-3 right-3 text-gray-600 hover:text-red-500">✕</button>
+        <div id="modalBody" class="mt-6"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="text-center p-6 text-sm text-gray-500 border-t mt-8">
+    © 2025 HouseMart — демо сайт. Все права защищены.
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

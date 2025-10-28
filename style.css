@@ -1,0 +1,29 @@
+/* Плавное появление */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  .animate-fadeIn { animation: fadeIn 0.25s ease-in-out; }
+  
+  /* Общие навигационные ссылки */
+  .nav-link {
+    color: #4b5563; /* gray-600 */
+    transition: color 0.2s;
+  }
+  .nav-link:hover {
+    color: #4f46e5; /* indigo-600 */
+  }
+  
+  /* Для картинок домов */
+  .card-image {
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Мобильный адаптив */
+  @media (max-width: 640px) {
+    h1 { font-size: 1.8rem; }
+    section { padding: 1rem; }
+    .card-image { height: 160px; }
+  }
+  
